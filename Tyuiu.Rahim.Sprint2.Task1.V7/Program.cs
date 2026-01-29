@@ -41,7 +41,7 @@ namespace Tyuiu.Rahim.Sprint2.Task1.V7
             DataService ds = new DataService();
             bool[] res = ds.GetLogicOperations(a, b, c, d);
 
-            Console.WriteLine("Результаты логических операций:");
+            Console.WriteLine("Результаты логических операций:"); 
 
             // Выводим подробную информацию о каждой операции
             string[] operations = {
