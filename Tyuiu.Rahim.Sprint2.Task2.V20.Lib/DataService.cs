@@ -7,19 +7,14 @@ namespace Tyuiu.Rahim.Sprint2.Task2.V20.Lib
     {
         public bool CheckDotInShadedArea(int x, int y)
         {
-            // ناحیه سایه‌دار: مستطیل‌های ترکیبی (به عنوان مثال)
-            // فرض: ناحیه شامل:
-            // 1. مستطیل افقی بالا: x از 3 تا 10 و y از 3 تا 4
-            // 2. مستطیل عمودی: x از 3 تا 4 و y از 5 تا 10
-            // 3. مستطیل پایین: x از 5 تا 12 و y از 11 تا 12
-            // (این مقادیر باید با شکل واقعی تطبیق داده شوند)
+            int yCorrect = 16 - y; // اصلاح محور Y
 
-            bool condition1 = (x >= 3) && (x <= 6) && (y >= 3) && (y <= 5);
-            bool condition2 = (x >= 6) && (x <= 8) && (y >= 5) && (y <= 10);
-            bool condition3 = (x >= 8) && (x <= 12) && (y >= 8) && (y <= 12);
-            bool condition4 = (x >= 2) && (x <= 5) && (y >= 10);
+            bool part1 = (x >= 3 && x <= 6 && yCorrect >= 3 && yCorrect <= 5);
+            bool part2 = (x >= 6 && x <= 8 && yCorrect >= 5 && yCorrect <= 10);
+            bool part3 = (x >= 8 && x <= 12 && yCorrect >= 8 && yCorrect <= 12);
+            bool part4 = (x >= 2 && x <= 5 && yCorrect == 10);
 
-            return condition1 || condition2 || condition3;
+            return part1 | part2 || part3 || part4;
         }
     }
 }
