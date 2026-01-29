@@ -22,7 +22,7 @@ namespace Tyuiu.Rahim.Sprint2.Task1.V1.Lib
             results[3] = !(a <= b) && (c >= d);
 
             // 5
-            results[4] = (a + 50 > b) || (c < d - 200);
+            results[4] = (a - 50 > b) || (c < d - 200);
 
             // 6
             results[5] = (b == c) && (a != d);
