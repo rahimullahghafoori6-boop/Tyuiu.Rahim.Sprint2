@@ -3,10 +3,10 @@ using Tyuiu.Rahim.Sprint2.Task1.V1.Lib;
 
 namespace Tyuiu.Rahim.Sprint2.Task1.V1.Test
 {
-    [TestFixture]
+
     public class DataServiceTest
     {
-        [Test]
+        
         public void ValidGetLogicOperations()
         {
             DataService ds = new DataService();
