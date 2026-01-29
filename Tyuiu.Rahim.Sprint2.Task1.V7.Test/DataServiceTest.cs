@@ -25,7 +25,7 @@ namespace Tyuiu.Rahim.Sprint2.Task0.V7.Test
             DataService ds = new DataService();
             int x = 103;
             int y = 475;
-            bool[] res = ds.GetCompareOperations(x, y);
+            bool[] res = ds.GetCompareOperations(x, y);v
             Assert.AreEqual(true, res[0]);
         }
 
