@@ -14,9 +14,9 @@ namespace Tyuiu.Rahim.Sprint2.Task2.V20.Lib
             // 3. مستطیل پایین: x از 5 تا 12 و y از 11 تا 12
             // (این مقادیر باید با شکل واقعی تطبیق داده شوند)
 
-            bool condition1 = (x >= 3) && (x <= 7) && (y >= 3) && (y <= 7);
-            bool condition2 = (x >= 8) && (x <= 12) && (y >= 8) && (y <= 12);
-            bool condition3 = (x >= 3) && (x <= 12) && (y >= 13) && (y <= 15);
+            bool condition1 = (x >= 3) && (x <= 6) && (y >= 3) && (y <= 5);
+            bool condition2 = (x >= 6) && (x <= 8) && (y >= 5) && (y <= 10);
+            bool condition3 = (x >= 8) && (x <= 12) && (y >= 8) && (y <= 12);
 
             return condition1 || condition2 || condition3;
         }
