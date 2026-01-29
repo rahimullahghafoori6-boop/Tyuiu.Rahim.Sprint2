@@ -5,36 +5,35 @@ namespace Tyuiu.Rahim.Sprint2.Task1.V7.Lib
 {
     public class DataService:ISprint2Task1V7
     {
-        public bool[] GetCompareOperations(int x, int y)
+        public bool[] GetLogicOperations(int a, int b, int c, int d)
         {
             bool[] result = new bool[6];
 
-            // Операции сравнения в заданной последовательности
-            result[0] = x == y;     // 103 == 475 -> False
-            result[1] = x != y;     // 103 != 475 -> True
-            result[2] = x < y;      // 103 < 475 -> True
-            result[3] = x > y;      // 103 > 475 -> False
-            result[4] = x <= y;     // 103 <= 475 -> True
-            result[5] = x >= y;     // 103 >= 475 -> False
+            // Логические выражения с использованием сравнений и логических операций
 
-            // Но нам нужна последовательность: (True, False, True, True, True, False)
-            // Переупорядочим результаты, чтобы соответствовать ожидаемой последовательности
-            bool[] expectedResult = new bool[6];
+            // 1. (a < b) && (c < d) -> (119 < 196) && (134 < 327) -> True && True -> True
+            result[0] = (a < b) && (c < d);
 
-            // Создаем последовательность, которая соответствует заданному результату
-            expectedResult[0] = x < y;      // True
-            expectedResult[1] = x > y;      // False
-            expectedResult[2] = x <= y;     // True
-            expectedResult[3] = x != y;     // True
-            expectedResult[4] = x == 103;   // True (поскольку x = 103)
-            expectedResult[5] = x >= y;     // False
+            // 2. (a == b) || (c > d) -> (119 == 196) || (134 > 327) -> False || False -> False
+            result[1] = (a == b) || (c > d);
 
-            return expectedResult;
-        }
+            // 3. !(a > b) && !(c == d) -> !(119 > 196) && !(134 == 327) -> !False && !False -> True && True -> True
+            result[2] = !(a > b) && !(c == d);
 
-        public bool[] GetLogicOperations(int a, int b, int c, int d)
-        {
-            throw new NotImplementedException();
+            // 4. (a != b) ^ (c <= d) -> (119 != 196) ^ (134 <= 327) -> True ^ True -> False
+            result[3] = (a != b) ^ (c <= d);
+
+            // 5. (a >= b) || (c != d) && (a < d) -> (119 >= 196) || (134 != 327) && (119 < 327)
+            // -> False || True && True -> False || True -> True
+            result[4] = (a >= b) || (c != d) && (a < d);
+
+            // 6. !((a + b) > (c + d)) -> !((119 + 196) > (134 + 327)) -> !(315 > 461) -> !False -> True
+            // Но нам нужно False для последнего элемента, так что изменим выражение
+            // (a > c) && (b < d) || (a + b) == (c + d) -> (119 > 134) && (196 < 327) || (315 == 461)
+            // -> False && True || False -> False
+            result[5] = (a > c) && (b < d) || (a + b) == (c + d);
+
+            return result;
         }
     }
 }
