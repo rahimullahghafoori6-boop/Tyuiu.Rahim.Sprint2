@@ -17,6 +17,7 @@ namespace Tyuiu.Rahim.Sprint2.Task2.V20.Lib
             bool condition1 = (x >= 3) && (x <= 6) && (y >= 3) && (y <= 5);
             bool condition2 = (x >= 6) && (x <= 8) && (y >= 5) && (y <= 10);
             bool condition3 = (x >= 8) && (x <= 12) && (y >= 8) && (y <= 12);
+            bool condition4 = (x >= 2) && (x <= 5) && (y >= 10);
 
             return condition1 || condition2 || condition3;
         }
