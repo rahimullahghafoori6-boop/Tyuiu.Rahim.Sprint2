@@ -1,21 +1,23 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tyuiu.Rahim.Sprint2.Task0.V7.Lib;
+using Tyuiu.Rahim.Sprint2.Task1.V7.Lib;
 
-namespace Tyuiu.Rahim.Sprint2.Task0.V7.Test
+namespace Tyuiu.Rahim.Sprint2.Task1.V7.Test
 {
     [TestClass]
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidGetCompareOperations()
+        public void ValidGetLogicOperations()
         {
             DataService ds = new DataService();
+            int a = 119;
+            int b = 196;
+            int c = 134;
+            int d = 327;
 
-            int x = 103;
-            int y = 475;
-            bool[] wait = new bool[6] { true, false, true, true, true, false };
+            bool[] wait = new bool[6] { true, false, true, false, true, false };
 
-            bool[] res = ds.GetCompareOperations(x, y);
+            bool[] res = ds.GetLogicOperations(a, b, c, d);
             CollectionAssert.AreEqual(wait, res);
         }
 
@@ -23,9 +25,12 @@ namespace Tyuiu.Rahim.Sprint2.Task0.V7.Test
         public void TestFirstElement()
         {
             DataService ds = new DataService();
-            int x = 103;
-            int y = 475;
-            bool[] res = ds.GetCompareOperations(x, y);
+            int a = 119;
+            int b = 196;
+            int c = 134;
+            int d = 327;
+
+            bool[] res = ds.GetLogicOperations(a, b, c, d);
             Assert.AreEqual(true, res[0]);
         }
 
@@ -33,10 +38,32 @@ namespace Tyuiu.Rahim.Sprint2.Task0.V7.Test
         public void TestSecondElement()
         {
             DataService ds = new DataService();
-            int x = 103;
-            int y = 475;
-            bool[] res = ds.GetCompareOperations(x, y);
+            int a = 119;
+            int b = 196;
+            int c = 134;
+            int d = 327;
+
+            bool[] res = ds.GetLogicOperations(a, b, c, d);
             Assert.AreEqual(false, res[1]);
+        }
+
+        [TestMethod]
+        public void TestAllElements()
+        {
+            DataService ds = new DataService();
+            int a = 119;
+            int b = 196;
+            int c = 134;
+            int d = 327;
+
+            bool[] res = ds.GetLogicOperations(a, b, c, d);
+
+            Assert.AreEqual(true, res[0]);  // First
+            Assert.AreEqual(false, res[1]); // Second
+            Assert.AreEqual(true, res[2]);  // Third
+            Assert.AreEqual(false, res[3]); // Fourth
+            Assert.AreEqual(true, res[4]);  // Fifth
+            Assert.AreEqual(false, res[5]); // Sixth
         }
     }
 }
