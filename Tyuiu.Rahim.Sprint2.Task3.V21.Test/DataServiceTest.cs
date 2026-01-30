@@ -7,7 +7,10 @@ namespace Tyuiu.Rahim.Sprint2.Task3.V21.Test
     
     public class DataServiceTest
     {
-        
+        public DataServiceTest()
+        {
+        }
+
         public void ValidCalculateXGreaterThanOne()
         {
             DataService ds = new DataService();
@@ -35,7 +38,6 @@ namespace Tyuiu.Rahim.Sprint2.Task3.V21.Test
             Assert.AreEqual(wait, ds.Calculate(x));
         }
 
-        [Test]
         public void ValidCalculateXLessThanMinus25()
         {
             DataService ds = new DataService();
@@ -58,6 +60,21 @@ namespace Tyuiu.Rahim.Sprint2.Task3.V21.Test
             DataService ds = new DataService();
             double x = -25;
             Assert.ThrowsException<ArgumentException>(() => ds.Calculate(x));
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string? ToString()
+        {
+            return base.ToString();
         }
     }
 }
