@@ -7,17 +7,13 @@ namespace Tyuiu.Rahim.Sprint2.Task3.V21.Test
     
     public class DataServiceTest
     {
-        public DataServiceTest()
-        {
-        }
+        
         public void ValidCalculateXGreaterThanOne()
         {
             DataService ds = new DataService();
-            double x = 5;
-            double fraction = (5 + 9) / (5 - 1); // 14/4 = 3.5
-            double expected = 5 * Math.Pow(fraction, 5); // 5 * 3.5^5
-            expected = Math.Round(expected, 3);
-            Assert.AreEqual(expected, ds.Calculate(x));
+            double x = 2;
+            double wait = Math.Round(Math.Pow(2 + 9, 2) / (2 - 1), 3); // (11^2)/1 = 121
+            Assert.AreEqual(wait, ds.Calculate(x));
         }
 
         
