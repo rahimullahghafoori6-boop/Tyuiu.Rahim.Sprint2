@@ -7,12 +7,22 @@ namespace Tyuiu.Rahim.Sprint2.Task4.V12.Lib
     {
         public double Calculate(double x, double y)
         {
-            // استفاده از عملگر سه‌تایی (Ternary Operator)
-            double result = (Math.Sqrt(x) > y && x >= 2)
-                ? Math.Pow(7 + (2 / Math.Pow(y, 2)), x)
-                : (3 * Math.Pow(x, 2) - Math.Pow(Math.Cos(y), 2) + 10) / (Math.Pow(y, 2) - Math.Pow(Math.Sin(x), 2) + 12);
+            double result;
 
-            return Math.Round(result, 3);
+            if (Math.Sqrt(x) > y && x >= 2)
+            {
+                double baseValue = 7 + (2 / (y * y));
+                result = Math.Pow(baseValue, x);
+            }
+            else
+            {
+                double numerator = (3 * x * x) - Math.Pow(Math.Cos(y), 2) + 10;
+                double denominator = (y * y) - Math.Pow(Math.Sin(x), 2) + 12;
+                result = numerator / denominator;
+            }
+
+            // گرد کردن فقط در انتها
+            return Math.Round(result, 3, MidpointRounding.AwayFromZero);
         }
     }
 }
