@@ -23,7 +23,7 @@ namespace Tyuiu.Rahim.Sprint2.Task5.V15
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            Console.Write("Введите номер дня (от 1 до 365): ");
+            Console.Write("Введите номер дня года (от 1 до 365): ");
             int k = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("***************************************************************************");
@@ -33,12 +33,12 @@ namespace Tyuiu.Rahim.Sprint2.Task5.V15
             DataService ds = new DataService();
             try
             {
-                string dayName = ds.FindDayName(k);
-                Console.WriteLine($"{k}-й день года: {dayName}");
+                string res = ds.FindDayName(k);
+                Console.WriteLine($"{k}-й день года: {res}");
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException e)
             {
-                Console.WriteLine($"Ошибка: {ex.Message}");
+                Console.WriteLine($"Ошибка! {e.Message}");
             }
 
             Console.ReadKey();

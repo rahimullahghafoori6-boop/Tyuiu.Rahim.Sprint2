@@ -7,20 +7,21 @@ namespace Tyuiu.Rahim.Sprint2.Task5.V15.Lib
     {
         public string FindDayName(int k)
         {
+            // Проверка диапазона
             if (k < 1 || k > 365)
             {
                 throw new ArgumentException("День должен быть в диапазоне от 1 до 365");
             }
 
-            // 1 января - понедельник (день недели = 1)
-            // Находим остаток от деления на 7
-            int dayOfWeek = (k - 1) % 7 + 1; // +1 потому что 1 января = 1 (понедельник)
+            // 1 января - понедельник (день недели 1)
+            // Находим остаток от деления
+            int dayOfWeek = (k - 1) % 7 + 1;
 
             string result;
             switch (dayOfWeek)
             {
                 case 1:
-                    result = "Понедельник"; 
+                    result = "Понедельник";
                     break;
                 case 2:
                     result = "Вторник";
