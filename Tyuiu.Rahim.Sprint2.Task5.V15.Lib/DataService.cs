@@ -20,7 +20,7 @@ namespace Tyuiu.Rahim.Sprint2.Task5.V15.Lib
             switch (dayOfWeek)
             {
                 case 1:
-                    result = "Понедельник";
+                    result = "Понедельник"; 
                     break;
                 case 2:
                     result = "Вторник";
